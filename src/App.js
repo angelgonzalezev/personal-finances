@@ -1,12 +1,7 @@
-import { Stack } from "@chakra-ui/react";
-import NavBarComponent from "./components/NavbarComponent";
+import Home from "./pages/Home";
 
 function App() {
-	return (
-		<Stack direction="column" bgColor={"#f7fafc"} minH="100vh" w="100vw" alignItems={"center"}>
-			<NavBarComponent />
-		</Stack>
-	);
+	return <Home />;
 }
 
 export default App;
