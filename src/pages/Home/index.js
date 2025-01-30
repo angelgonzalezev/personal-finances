@@ -1,13 +1,14 @@
 import { Stack } from "@chakra-ui/react";
-import NavBarComponent from "./sections/NavbarComponent";
-import HeroComponent from "./sections/HeroComponent";
+import NavbarSection from "./sections/NavbarSection";
+import HeroSection from "./sections/HeroSection";
+import FeatureSection from "./sections/FeatureSection";
 
 const Home = () => {
 	return (
-		<Stack direction="column" bgColor={"#f7fafc"} minH="100vh" w="100vw" alignItems={"center"}>
-			<NavBarComponent />
-			<HeroComponent />
-			{/* <FeaturesComponent /> */}
+		<Stack direction="column" bgColor={"white"} minH="100vh" w="100vw" alignItems={"center"}>
+			<NavbarSection />
+			<HeroSection />
+			<FeatureSection />
 		</Stack>
 	);
 };
