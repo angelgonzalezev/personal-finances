@@ -1,7 +1,7 @@
 import { Button, Icon, Stack, Text } from "@chakra-ui/react";
-import { Avatar } from "../components/ui/Avatar";
 import { ArrowRight, Zap } from "lucide-react";
-import { Rating } from "./ui/Rating";
+import { Rating } from "../../../components/ui/Rating";
+import { Avatar } from "../../../components/ui/Avatar";
 
 const HeroComponent = () => {
 	return (
