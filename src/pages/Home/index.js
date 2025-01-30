@@ -2,6 +2,7 @@ import { Stack } from "@chakra-ui/react";
 import NavbarSection from "./sections/NavbarSection";
 import HeroSection from "./sections/HeroSection";
 import FeatureSection from "./sections/FeatureSection";
+import TestimonialSection from "./sections/TestimonialSection";
 
 const Home = () => {
 	return (
@@ -9,6 +10,7 @@ const Home = () => {
 			<NavbarSection />
 			<HeroSection />
 			<FeatureSection />
+			<TestimonialSection />
 		</Stack>
 	);
 };

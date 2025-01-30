@@ -17,6 +17,7 @@ const FeatureSection = () => {
 							shadow: "md",
 							boxShadow: "0px 4px 10px rgba(1, 1, 1, 0.3)",
 						}}
+						bgColor="white"
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
 							<Icon color="blue.500">
@@ -41,6 +42,7 @@ const FeatureSection = () => {
 							shadow: "md",
 							boxShadow: "0px 4px 10px rgba(1, 1, 1, 0.3)",
 						}}
+						bgColor="white"
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
 							<Icon color="blue.500">
@@ -65,6 +67,7 @@ const FeatureSection = () => {
 							shadow: "md",
 							boxShadow: "0px 4px 10px rgba(1, 1, 1, 0.3)",
 						}}
+						bgColor="white"
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
 							<Icon color="blue.500">
