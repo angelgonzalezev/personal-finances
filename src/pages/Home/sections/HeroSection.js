@@ -40,7 +40,7 @@ const HeroComponent = () => {
 							Get Started Free
 						</Text>
 
-						<Icon as={ArrowRight} size="20px" />
+						<Icon as={ArrowRight} size="20px" color="white" />
 					</Button>
 					<Button rounded="full" borderWidth="1px" borderColor="gray.400" py="16px" px="32px" h="fit-content">
 						<Text fontWeight="bold" fontSize="xl" color="black">

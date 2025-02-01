@@ -3,6 +3,7 @@ import NavbarSection from "./sections/NavbarSection";
 import HeroSection from "./sections/HeroSection";
 import FeatureSection from "./sections/FeatureSection";
 import TestimonialSection from "./sections/TestimonialSection";
+import CTASection from "./sections/CTASection";
 
 const Home = () => {
 	return (
@@ -11,6 +12,7 @@ const Home = () => {
 			<HeroSection />
 			<FeatureSection />
 			<TestimonialSection />
+			<CTASection />
 		</Stack>
 	);
 };
