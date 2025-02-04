@@ -1,23 +1,10 @@
-import { useEffect, useState } from "react";
-import supabase from "../supabase/supabaseClient";
 import { Navigate, Outlet } from "react-router";
-import { Text } from "@chakra-ui/react";
 import { PublicRoutes } from "./routes";
+import { useSelector } from "react-redux";
 
 const AuthGuard = () => {
-	const [loading, setLoading] = useState(true);
-	const [authenticated, setAuthenticated] = useState(false);
+	const userState = useSelector((store) => store.user);
 
-	useEffect(() => {
-		const getSession = async () => {
-			const { data, error } = await supabase.auth.getSession();
-			const { session } = data;
-			setAuthenticated(!!session);
-			setLoading(false);
-		};
-		getSession();
-	}, []);
-
-	return <>{loading ? <Text>Loading...</Text> : authenticated ? <Outlet /> : <Navigate to={PublicRoutes.Home} />}</>;
+	return userState?.id?.length ? <Outlet /> : <Navigate replace to={PublicRoutes.Home} />;
 };
 export default AuthGuard;

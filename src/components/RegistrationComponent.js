@@ -4,11 +4,14 @@ import InputField from "./InputField";
 import supabase from "../supabase/supabaseClient";
 import { useNavigate } from "react-router";
 import { PrivateRoutes } from "../routes/routes";
+import { useDispatch } from "react-redux";
+import { createUser } from "../redux/states/user";
 
 const RegistrationComponent = () => {
 	const navigate = useNavigate();
 	const [form, setForm] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
+	const dispatch = useDispatch();
 
 	const handleOnChange = (e) => {
 		const { name, value } = e.target;
@@ -19,15 +22,20 @@ const RegistrationComponent = () => {
 		const { data, error } = await supabase.auth.signUp(form);
 
 		if (error?.code === "user_already_exists") {
-			const { data, error } = supabase.auth.signInWithPassword(form);
+			const { data, error } = await supabase.auth.signInWithPassword(form);
 			if (error) {
 				setError(error);
-			} else {
+			} else if (data.user && data.session) {
+				const { id } = data.user;
+				dispatch(createUser({ id }));
+
 				navigate(PrivateRoutes.Dashboard);
 			}
 		} else if (error) {
+			console.log("Entra en error");
 			setError(error);
-		} else if (data) {
+		} else if (data.session) {
+			console.log("Entra e session");
 			navigate("/dashboard");
 		}
 	};
