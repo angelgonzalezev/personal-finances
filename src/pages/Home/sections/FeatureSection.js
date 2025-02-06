@@ -5,7 +5,7 @@ const FeatureSection = () => {
 	return (
 		<Stack w="100%" bgColor="#f9fafb" px="16px" py="96px" alignItems="center" justifyContent="center">
 			<Box w="100%" maxW="80rem" alignItems="center" justifyContent="center">
-				<Grid templateColumns="repeat(3, 1fr)" gap="6" w="100%">
+				<Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }} gap="6" w="100%">
 					<Stack
 						p="24px"
 						borderWidth="1px"
