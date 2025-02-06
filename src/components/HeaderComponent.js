@@ -59,9 +59,10 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 			bgColor="white"
 			justifyContent="center"
 			alignItems="center"
+			px={4}
 		>
 			<Stack flexDirection="row" alignItems="center" justifyContent="space-between" maxW="896px" w="100%">
-				<Text color="black" fontSize="2xl" fontWeight="bold">
+				<Text color="black" fontSize={{ base: "sm", sm: "md", md: "2xl", lg: "4xl" }} fontWeight="bold">
 					My Expenses
 				</Text>
 				<Stack flexDir="row" gap={10}>
@@ -77,9 +78,11 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 								borderRadius="lg"
 							>
 								<Icon color="black">
-									<DollarSign size="18" />
+									<DollarSign />
 								</Icon>
-								<Text color="black">Set Income</Text>
+								<Text color="black" fontSize={{ base: "xs", md: "lg" }}>
+									Set Income
+								</Text>
 							</Stack>
 						}
 						bodyElement={
@@ -111,10 +114,12 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 						borderRadius="lg"
 						onClick={handleSignOut}
 					>
-						<Icon color="black">
-							<LogOutIcon size="18" />
+						<Icon color="black" as={LogOutIcon}>
+							<LogOutIcon />
 						</Icon>
-						<Text color="black">Sign out</Text>
+						<Text color="black" fontSize={{ base: "xs", md: "lg" }}>
+							Sign out
+						</Text>
 					</Stack>
 				</Stack>
 			</Stack>
