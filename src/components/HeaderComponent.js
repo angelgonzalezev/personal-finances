@@ -4,13 +4,15 @@ import DialogComponent from "./DialogComponent";
 import SetIncomeComponent from "./SetIncomeComponent";
 import supabase from "../supabase/supabaseClient";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { resetUser } from "../redux/states/user";
 
 const HeaderComponent = () => {
 	const [error, setError] = useState(undefined);
 	const [monthlyIncome, setMonthlyIncome] = useState("");
 	const userState = useSelector((store) => store.user);
 	const [open, setOpen] = useState(false);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		const getLastIncome = async () => {
@@ -43,6 +45,10 @@ const HeaderComponent = () => {
 			setError(undefined);
 			setOpen(false);
 		}
+	};
+
+	const handleSignOut = () => {
+		dispatch(resetUser());
 	};
 
 	return (
@@ -103,11 +109,12 @@ const HeaderComponent = () => {
 						py={2}
 						px={4}
 						borderRadius="lg"
+						onClick={handleSignOut}
 					>
 						<Icon color="black">
 							<LogOutIcon size="18" />
 						</Icon>
-						<Text color="black">Set Income</Text>
+						<Text color="black">Sign out</Text>
 					</Stack>
 				</Stack>
 			</Stack>

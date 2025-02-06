@@ -1,5 +1,4 @@
 import {
-	DialogActionTrigger,
 	DialogBody,
 	DialogCloseTrigger,
 	DialogContent,
@@ -19,9 +18,8 @@ const DialogComponent = ({ triggerElement, bodyElement, footerElement, title, op
 			role="alertdialog"
 			closeOnInteractOutside
 			open={open}
-			onOpenChange={(e) => setOpen(e.open)}
 		>
-			<DialogTrigger>{triggerElement}</DialogTrigger>
+			<DialogTrigger onClick={() => setOpen(true)}>{triggerElement}</DialogTrigger>
 			<DialogContent bgColor="white" p="6" rounded="2xl" boxShadow="0 10px 15px rgba(0, 0, 0, 0.2)">
 				{title && (
 					<DialogHeader>
@@ -31,12 +29,8 @@ const DialogComponent = ({ triggerElement, bodyElement, footerElement, title, op
 					</DialogHeader>
 				)}
 				<DialogBody>{bodyElement}</DialogBody>
-				{footerElement && (
-					<DialogFooter w={"100%"}>
-						<DialogActionTrigger w={"100%"}>{footerElement}</DialogActionTrigger>
-					</DialogFooter>
-				)}
-				<DialogCloseTrigger />
+				{footerElement && <DialogFooter w={"100%"}>{footerElement}</DialogFooter>}
+				<DialogCloseTrigger onClick={() => setOpen(false)} />
 			</DialogContent>
 		</DialogRoot>
 	);
