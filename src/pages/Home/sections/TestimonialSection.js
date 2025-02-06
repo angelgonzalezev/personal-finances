@@ -9,7 +9,7 @@ const TestimonialSection = () => {
 				Loved by financial experts
 			</Text>
 			<Box w="100%" maxW="80rem" alignItems="center" justifyContent="center">
-				<Grid templateColumns="repeat(3, 1fr)" gap="6" w="100%">
+				<Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }} gap="6" w="100%">
 					<Stack
 						p="32px"
 						borderWidth="1px"
