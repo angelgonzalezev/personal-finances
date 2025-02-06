@@ -3,7 +3,7 @@ import { BadgeCheck, Shield, Zap } from "lucide-react";
 
 const FeatureSection = () => {
 	return (
-		<Stack w="100vw" bgColor="#f9fafb" px="16px" py="96px" alignItems="center" justifyContent="center">
+		<Stack w="100%" bgColor="#f9fafb" px="16px" py="96px" alignItems="center" justifyContent="center">
 			<Box w="100%" maxW="80rem" alignItems="center" justifyContent="center">
 				<Grid templateColumns="repeat(3, 1fr)" gap="6" w="100%">
 					<Stack

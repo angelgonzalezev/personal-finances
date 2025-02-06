@@ -5,7 +5,7 @@ import { Avatar } from "../../../components/ui/Avatar";
 
 const HeroComponent = () => {
 	return (
-		<Stack direction="column" py="80px" px="16px" w="1280px">
+		<Stack direction="column" py="80px" px="16px" maxW="1280px" w="100%">
 			<Stack
 				direction="row"
 				alignItems="center"
@@ -18,32 +18,50 @@ const HeroComponent = () => {
 				gradientFrom="blue.50"
 				gradientTo="blue.100"
 				w="fit-content"
+				mb={6}
 			>
 				<Icon color="blue.500">
-					<Zap size="16px" />
+					<Zap size="14px" />
 				</Icon>
-				<Text color="blue.500" fontWeight="bold">
+				<Text color="blue.700" fontWeight="medium" fontSize="sm">
 					Track expenses like a pro
 				</Text>
 			</Stack>
 			<Stack flexDir="column" gap="32px">
-				<Text color="black" fontSize="7xl" fontWeight="bold" maxW="896px" lineHeight="0.8">
+				<Text color="black" fontSize={{ base: "6xl", md: "7xl" }} fontWeight="bold" maxW="896px" lineHeight="0.8">
 					The fastest way to track your expenses
 				</Text>
-				<Text color="black" fontSize="xl" maxW="672px">
+				<Text color="gray.600" fontSize="xl" maxW="672px" fontWeight="medium">
 					Stop using spreadsheets. Start using a modern expense tracker that helps you understand where your money goes.
 					Built for individuals and teams.
 				</Text>
-				<Stack flexDir="row" gap="1" alignItems="center">
-					<Button bgColor="blue.500" py="16px" px="32px" h="fit-content" rounded="full">
+				<Stack flexDir={{ base: "column", md: "row" }} gap="1" alignItems={{ base: "start", md: "center" }} w="100%">
+					<Button
+						bgColor="blue.600"
+						py="16px"
+						px="32px"
+						h="fit-content"
+						rounded="full"
+						maxW={{ base: "100%", md: "50%" }}
+						w={{ base: "100%", md: "fit-content" }}
+					>
 						<Text fontWeight="bold" fontSize="xl" color="white">
 							Get Started Free
 						</Text>
 
 						<Icon as={ArrowRight} size="20px" color="white" />
 					</Button>
-					<Button rounded="full" borderWidth="1px" borderColor="gray.400" py="16px" px="32px" h="fit-content">
-						<Text fontWeight="bold" fontSize="xl" color="black">
+					<Button
+						rounded="full"
+						borderWidth="1px"
+						borderColor="gray.300"
+						py="16px"
+						px="32px"
+						h="fit-content"
+						maxW={{ base: "100%", md: "50%" }}
+						w={{ base: "100%", md: "fit-content" }}
+					>
+						<Text fontWeight="regular" fontSize="xl" color="gray.600">
 							View Demo
 						</Text>
 					</Button>

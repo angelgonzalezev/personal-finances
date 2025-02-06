@@ -61,7 +61,7 @@ const NavBarComponent = () => {
 				}
 				bodyElement={<RegistrationComponent setForm={setForm} form={form} error={error} />}
 				footerElement={
-					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.500" color="white" onClick={handleSignup}>
+					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.700" color="white" onClick={handleSignup}>
 						Sign up
 					</Button>
 				}
