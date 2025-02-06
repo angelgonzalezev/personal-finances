@@ -20,10 +20,10 @@ const HeroComponent = () => {
 				w="fit-content"
 				mb={6}
 			>
-				<Icon color="blue.500">
+				<Icon color="blue.600">
 					<Zap size="14px" />
 				</Icon>
-				<Text color="blue.700" fontWeight="medium" fontSize="sm">
+				<Text color="blue.600" fontWeight="medium" fontSize="sm">
 					Track expenses like a pro
 				</Text>
 			</Stack>
@@ -67,7 +67,7 @@ const HeroComponent = () => {
 					</Button>
 				</Stack>
 				<Stack flexDir="row" alignItems="center" gap="1rem">
-					<Stack flexDir="row" alignItems="center" gap="0">
+					{/* <Stack flexDir="row" alignItems="center" gap="0">
 						<Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" borderColor="white" borderWidth="1px" />
 						<Avatar
 							name="Segun Adebayo"
@@ -90,7 +90,7 @@ const HeroComponent = () => {
 							borderColor="white"
 							borderWidth="1px"
 						/>
-					</Stack>
+					</Stack> */}
 					<Stack flexDir="column" gap={"2px"}>
 						<Rating colorPalette="yellow" readOnly size="md" defaultValue={5} bgColor="white" />
 						<Text color="gray.800" fontSize="md">

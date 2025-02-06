@@ -20,7 +20,7 @@ const FeatureSection = () => {
 						bgColor="white"
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
-							<Icon color="blue.500">
+							<Icon color="blue.600">
 								<Shield size="24px" />
 							</Icon>
 						</Center>
@@ -45,7 +45,7 @@ const FeatureSection = () => {
 						bgColor="white"
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
-							<Icon color="blue.500">
+							<Icon color="blue.600">
 								<Zap size="24px" />
 							</Icon>
 						</Center>
@@ -70,7 +70,7 @@ const FeatureSection = () => {
 						bgColor="white"
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
-							<Icon color="blue.500">
+							<Icon color="blue.600">
 								<BadgeCheck size="24px" />
 							</Icon>
 						</Center>

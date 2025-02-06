@@ -55,7 +55,7 @@ const AddExpenseComponent = () => {
 					size="xl"
 					w="3.5rem"
 					h="3.5rem"
-					bgColor={"blue.500"}
+					bgColor={"blue.600"}
 					rounded="full"
 					bottom={6}
 					right={6}
@@ -74,7 +74,7 @@ const AddExpenseComponent = () => {
 					px="16px"
 					py="8px"
 					borderRadius="full"
-					bgColor="blue.500"
+					bgColor="blue.600"
 					color="white"
 					onClick={handleAddExpense}
 					w="100%"

@@ -93,7 +93,7 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 								px="16px"
 								py="8px"
 								borderRadius="full"
-								bgColor="blue.500"
+								bgColor="blue.600"
 								color="white"
 								onClick={onSave}
 								w="100%"

@@ -47,7 +47,7 @@ const NavBarComponent = () => {
 			w="100%"
 		>
 			<Stack direction="row" spacing={4}>
-				<Icon as={Sparkles} color="blue.500" size={"24px"} />
+				<Icon as={Sparkles} color="blue.600" size={"24px"} />
 				<Text color="#111827" fontWeight="bold">
 					ExpenseTracker
 				</Text>
@@ -55,13 +55,13 @@ const NavBarComponent = () => {
 			<DialogComponent
 				title={"Create an account"}
 				triggerElement={
-					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.500" color="white">
+					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.600" color="white">
 						Sign In
 					</Button>
 				}
 				bodyElement={<RegistrationComponent setForm={setForm} form={form} error={error} />}
 				footerElement={
-					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.700" color="white" onClick={handleSignup}>
+					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.600" color="white" onClick={handleSignup}>
 						Sign up
 					</Button>
 				}

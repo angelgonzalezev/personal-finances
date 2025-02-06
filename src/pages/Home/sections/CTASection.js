@@ -10,11 +10,10 @@ const CTASection = () => {
 			<Text color="gray.500" fontSize="2xl" maxW="42rem" textAlign="center" mb="24px">
 				Join thousands of users who are already saving money and making better financial decisions.
 			</Text>
-			<Button bgColor="blue.500" py="16px" px="32px" h="fit-content" rounded="full">
+			<Button bgColor="blue.600" py="16px" px="32px" h="fit-content" rounded="full">
 				<Text fontWeight="bold" fontSize="xl" color="white" textAlign="center">
 					Get Started Free
 				</Text>
-
 				<Icon as={ArrowRight} size="20px" color="white" />
 			</Button>
 		</Stack>

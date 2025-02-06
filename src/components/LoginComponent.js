@@ -32,7 +32,7 @@ const LoginComponent = () => {
 				name="password"
 				type="password"
 			/>
-			<Button px="16px" py="8px" borderRadius="full" bgColor="blue.500" color="white" onClick={handleSignIn}>
+			<Button px="16px" py="8px" borderRadius="full" bgColor="blue.600" color="white" onClick={handleSignIn}>
 				Log in
 			</Button>
 		</Stack>

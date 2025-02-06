@@ -23,7 +23,7 @@ const TestimonialSection = () => {
 						}}
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
-							<Icon color="blue.500">
+							<Icon color="blue.600">
 								<Quote size="40px" />
 							</Icon>
 						</Center>
@@ -54,7 +54,7 @@ const TestimonialSection = () => {
 						}}
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
-							<Icon color="blue.500">
+							<Icon color="blue.600">
 								<Quote size="40px" />
 							</Icon>
 						</Center>
@@ -85,7 +85,7 @@ const TestimonialSection = () => {
 						}}
 					>
 						<Center p="16px" bgColor="#eff6ff" h="3rem" w="3rem" rounded="full" mb="16px">
-							<Icon color="blue.500">
+							<Icon color="blue.600">
 								<Quote size="40px" />
 							</Icon>
 						</Center>
