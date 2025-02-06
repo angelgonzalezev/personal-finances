@@ -22,7 +22,7 @@ const HeaderComponent = () => {
 				.limit(1);
 			if (error) {
 				setError(error.message);
-			} else {
+			} else if (data.length > 0) {
 				setMonthlyIncome(data[0].amount);
 			}
 		};
