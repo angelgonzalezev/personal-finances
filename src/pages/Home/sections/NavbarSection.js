@@ -37,7 +37,15 @@ const NavBarComponent = () => {
 	};
 
 	return (
-		<Stack direction="row" justifyContent="space-between" alignItems="center" px={"24px"} py={"16px"} w="1280px">
+		<Stack
+			direction="row"
+			justifyContent="space-between"
+			alignItems="center"
+			px={"24px"}
+			py={"16px"}
+			maxW="1280px"
+			w="100%"
+		>
 			<Stack direction="row" spacing={4}>
 				<Icon as={Sparkles} color="blue.500" size={"24px"} />
 				<Text color="#111827" fontWeight="bold">
