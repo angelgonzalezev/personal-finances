@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUser } from "../redux/states/user";
 
-const HeaderComponent = () => {
-	const [error, setError] = useState(undefined);
-	const [monthlyIncome, setMonthlyIncome] = useState("");
-	const userState = useSelector((store) => store.user);
+const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
+	const [error, setError] = useState(currentError);
+	const [monthlyIncome, setMonthlyIncome] = useState(currentMonthlyIncome);
 	const [open, setOpen] = useState(false);
+	const userState = useSelector((store) => store.user);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -55,7 +55,7 @@ const HeaderComponent = () => {
 		<Stack
 			h="76px"
 			w="100%"
-			boxShadow="0 0px 24px rgba(1,1,1, 0.2)"
+			boxShadow="0 5px 24px rgba(0,0,0, 0.1)"
 			bgColor="white"
 			justifyContent="center"
 			alignItems="center"
