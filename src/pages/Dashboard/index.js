@@ -47,7 +47,7 @@ const Dashboard = () => {
 	}, [userState.id]);
 
 	return (
-		<Box minW="100vw" minH="100vh" bgColor="pink.50">
+		<Box w={"100%"} bgColor="pink.50" minH="100vh">
 			<HeaderComponent currentMonthlyIncome={monthlyIncome} currentError={error} />
 			<StatsComponent currentMonthlyIncome={monthlyIncome} lastMontExpenses={lastMontExpenses} />
 			<AddExpenseComponent />
