@@ -27,7 +27,7 @@ const HeaderComponent = () => {
 			}
 		};
 		getLastIncome();
-	}, []);
+	}, [userState.id]);
 
 	const handleOnChange = (e) => {
 		const { value } = e.target;
