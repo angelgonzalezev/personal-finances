@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import supabase from "../../supabase/supabaseClient";
 import { useSelector } from "react-redux";
 import ChartComponent from "../../components/ChartComponent";
+import ActionsComponent from "../../components/ActionsComponent";
 
 const Dashboard = () => {
 	const [error, setError] = useState(undefined);
@@ -48,6 +49,9 @@ const Dashboard = () => {
 	return (
 		<Box w={"100%"} bgColor="pink.50" minH="100vh">
 			<HeaderComponent currentMonthlyIncome={monthlyIncome} currentError={error} />
+			<Box w="100%" display={{ md: "none" }} p={4}>
+				<ActionsComponent currentMonthlyIncome={monthlyIncome} currentError={error} />
+			</Box>
 			{/* <ChartComponent /> */}
 			<StatsComponent currentMonthlyIncome={monthlyIncome} lastMontExpenses={lastMontExpenses} />
 			<AddExpenseComponent />

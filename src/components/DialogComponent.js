@@ -19,7 +19,9 @@ const DialogComponent = ({ triggerElement, bodyElement, footerElement, title, op
 			closeOnInteractOutside
 			open={open}
 		>
-			<DialogTrigger onClick={() => setOpen(true)}>{triggerElement}</DialogTrigger>
+			<DialogTrigger onClick={() => setOpen(true)} asChild>
+				{triggerElement}
+			</DialogTrigger>
 			<DialogContent bgColor="white" p="6" rounded="2xl" boxShadow="0 10px 15px rgba(0, 0, 0, 0.2)">
 				{title && (
 					<DialogHeader>

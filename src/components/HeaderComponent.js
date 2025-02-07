@@ -1,10 +1,10 @@
-import { Button, Icon, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Icon, Stack, Text } from "@chakra-ui/react";
 import { DollarSign, LogOutIcon } from "lucide-react";
 import DialogComponent from "./DialogComponent";
 import SetIncomeComponent from "./SetIncomeComponent";
 import supabase from "../supabase/supabaseClient";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createUser } from "../redux/states/user";
 import FeedbackComponent from "./FeedbackComponent";
 
@@ -13,7 +13,6 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 	const [monthlyIncome, setMonthlyIncome] = useState(currentMonthlyIncome);
 	const [open, setOpen] = useState(false);
 	const [openFeedback, setOpenFeedback] = useState(false);
-	const userState = useSelector((store) => store.user);
 	const dispatch = useDispatch();
 
 	const handleOnChange = (e) => {
@@ -54,46 +53,48 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 				<Text color="black" fontSize={{ base: "sm", sm: "md", md: "2xl", lg: "4xl" }} fontWeight="bold">
 					My Expenses
 				</Text>
-				<Stack flexDir="row" gap={10}>
-					<DialogComponent
-						title="Monthly Income"
-						triggerElement={
-							<Stack
-								flexDir="row"
-								alignItems="center"
-								_hover={{ cursor: "pointer", bgColor: "gray.50" }}
-								py={2}
-								px={4}
-								borderRadius="lg"
-							>
-								<Icon color="black">
-									<DollarSign />
-								</Icon>
-								<Text color="black" fontSize={{ base: "xs", md: "lg" }}>
-									Set Income
-								</Text>
-							</Stack>
-						}
-						bodyElement={
-							<SetIncomeComponent handleOnChange={handleOnChange} error={error} monthlyIncome={monthlyIncome} />
-						}
-						footerElement={
-							<Button
-								px="16px"
-								py="8px"
-								borderRadius="full"
-								bgColor="blue.600"
-								color="white"
-								onClick={onSave}
-								w="100%"
-								mt={2}
-							>
-								Save Income
-							</Button>
-						}
-						open={open}
-						setOpen={setOpen}
-					/>
+				<Stack flexDir="row" gap={10} alignItems="center">
+					<Box display={{ base: "none", md: "block" }}>
+						<DialogComponent
+							title="Monthly Income"
+							triggerElement={
+								<Stack
+									flexDir="row"
+									alignItems="center"
+									_hover={{ cursor: "pointer", bgColor: "gray.50" }}
+									py={2}
+									px={4}
+									borderRadius="lg"
+								>
+									<Icon color="black">
+										<DollarSign />
+									</Icon>
+									<Text color="black" fontSize={{ base: "xs", md: "lg" }}>
+										Set Income
+									</Text>
+								</Stack>
+							}
+							bodyElement={
+								<SetIncomeComponent handleOnChange={handleOnChange} error={error} monthlyIncome={monthlyIncome} />
+							}
+							footerElement={
+								<Button
+									px="16px"
+									py="8px"
+									borderRadius="full"
+									bgColor="blue.600"
+									color="white"
+									onClick={onSave}
+									w="100%"
+									mt={2}
+								>
+									Save Income
+								</Button>
+							}
+							open={open}
+							setOpen={setOpen}
+						/>
+					</Box>
 					<Stack
 						flexDir="row"
 						alignItems="center"
