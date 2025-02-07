@@ -33,7 +33,7 @@ const HeroComponent = () => {
 				</Text>
 				<Text color="gray.600" fontSize="xl" maxW="672px" fontWeight="medium">
 					Stop using spreadsheets. Start using a modern expense tracker that helps you understand where your money goes.
-					Built for individuals and teams.
+					Built for individuals like you.
 				</Text>
 				<Stack flexDir={{ base: "column", md: "row" }} gap="1" alignItems={{ base: "start", md: "center" }} w="100%">
 					<Button
