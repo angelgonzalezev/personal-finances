@@ -20,7 +20,7 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 	};
 
 	const onSave = async () => {
-		const { error } = await supabase.from("incomes").insert([{ amount: monthlyIncome, user_id: userState.id }]);
+		const { error } = await supabase.from("incomes").insert([{ amount: monthlyIncome }]);
 		if (error) {
 			setOpen(true);
 			setError(error.message);
