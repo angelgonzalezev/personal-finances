@@ -27,7 +27,7 @@ const Dashboard = () => {
 			}
 		};
 		getLastIncome();
-	}, [userState.id]);
+	}, [userState]);
 
 	useEffect(() => {
 		const getTotalExpenses = async () => {
@@ -42,7 +42,7 @@ const Dashboard = () => {
 			}
 		};
 		getTotalExpenses();
-	}, [userState.id]);
+	}, [userState]);
 
 	return (
 		<Box w={"100%"} bgColor="pink.50" minH="100vh">

@@ -8,7 +8,7 @@ const StatsComponent = ({ currentMonthlyIncome, lastMontExpenses }) => {
 		<Stack w="100%" alignItems="center">
 			<Stack w="100%" maxW="896px">
 				<MonthlyOverviewComponent currentMonthlyIncome={currentMonthlyIncome} totalExpenses={totalExpenses} />
-				<RecentExpenses lastMontExpenses={lastMontExpenses} />
+				{totalExpenses && <RecentExpenses lastMontExpenses={lastMontExpenses} />}
 			</Stack>
 		</Stack>
 	);

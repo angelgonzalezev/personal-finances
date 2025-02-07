@@ -18,7 +18,7 @@ const RecentExpenses = ({ lastMontExpenses }) => {
 	});
 
 	return (
-		<Box p={4} maxW="896px">
+		<Stack p={4} maxW="896px" flexDir="column" gap={1}>
 			<Text fontSize="md" color="black" fontWeight="semibold">
 				Recent Expenses
 			</Text>
@@ -51,7 +51,7 @@ const RecentExpenses = ({ lastMontExpenses }) => {
 					</Text>
 				</Stack>
 			))}
-		</Box>
+		</Stack>
 	);
 };
 export default RecentExpenses;

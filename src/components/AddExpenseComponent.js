@@ -3,15 +3,16 @@ import { Plus } from "lucide-react";
 import { useState } from "react";
 import DialogComponent from "./DialogComponent";
 import supabase from "../supabase/supabaseClient";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import SetExpenseComponent from "./SetExpenseComponent";
+import { createUser } from "../redux/states/user";
 
 const AddExpenseComponent = () => {
-	const userState = useSelector((store) => store.user);
 	const [open, setOpen] = useState(false);
 	const [amount, setAmount] = useState();
 	const [error, setError] = useState("");
 	const [tag, setTag] = useState("");
+	const dispatch = useDispatch();
 
 	const validateForm = () => {
 		if (!amount || amount <= 0) {
@@ -28,10 +29,11 @@ const AddExpenseComponent = () => {
 	const handleAddExpense = async () => {
 		const isValid = validateForm();
 		if (isValid) {
-			const { error } = await supabase.from("expenses").insert([{ amount, user_id: userState.id, tag }]);
+			const { error } = await supabase.from("expenses").insert([{ amount, tag }]);
 			if (error) {
 				setError(error.message);
 			} else {
+				dispatch(createUser({ timestamp: Date.now }));
 				setError(undefined);
 				setTag(undefined);
 				setAmount(undefined);

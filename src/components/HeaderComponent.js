@@ -3,10 +3,9 @@ import { DollarSign, LogOutIcon } from "lucide-react";
 import DialogComponent from "./DialogComponent";
 import SetIncomeComponent from "./SetIncomeComponent";
 import supabase from "../supabase/supabaseClient";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetUser } from "../redux/states/user";
-import { toaster } from "./ui/Toaster";
+import { createUser } from "../redux/states/user";
 
 const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 	const [error, setError] = useState(currentError);
@@ -14,23 +13,6 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 	const [open, setOpen] = useState(false);
 	const userState = useSelector((store) => store.user);
 	const dispatch = useDispatch();
-
-	useEffect(() => {
-		const getLastIncome = async () => {
-			const { data, error } = await supabase
-				.from("incomes")
-				.select("amount")
-				.eq("user_id", userState.id)
-				.order("created_at", { ascending: false }) // Fallback to created_at if dates are the same
-				.limit(1);
-			if (error) {
-				setError(error.message);
-			} else if (data.length > 0) {
-				setMonthlyIncome(data[0].amount);
-			}
-		};
-		getLastIncome();
-	}, [userState.id]);
 
 	const handleOnChange = (e) => {
 		const { value } = e.target;
@@ -43,6 +25,7 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 			setOpen(true);
 			setError(error.message);
 		} else {
+			dispatch(createUser({ timestamp: Date.now }));
 			setError(undefined);
 			setOpen(false);
 		}
