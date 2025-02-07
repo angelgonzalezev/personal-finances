@@ -30,7 +30,7 @@ const DialogComponent = ({ triggerElement, bodyElement, footerElement, title, op
 				)}
 				<DialogBody>{bodyElement}</DialogBody>
 				{footerElement && <DialogFooter w={"100%"}>{footerElement}</DialogFooter>}
-				<DialogCloseTrigger onClick={() => setOpen(false)} />
+				<DialogCloseTrigger onClick={() => setOpen(false)} _hover={{ backgroundColor: "gray.50" }} color="black" />
 			</DialogContent>
 		</DialogRoot>
 	);

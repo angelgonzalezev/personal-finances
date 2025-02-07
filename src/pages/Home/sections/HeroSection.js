@@ -92,7 +92,7 @@ const HeroComponent = () => {
 						/>
 					</Stack> */}
 					<Stack flexDir="column" gap={"2px"}>
-						<Rating colorPalette="yellow" readOnly size="md" defaultValue={5} bgColor="white" />
+						<Rating colorPalette="yellow" readOnly size="md" defaultValue={5} />
 						<Text color="gray.800" fontSize="md">
 							From 100+ happy users
 						</Text>
