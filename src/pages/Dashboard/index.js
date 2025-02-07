@@ -18,7 +18,6 @@ const Dashboard = () => {
 			const { data, error } = await supabase
 				.from("incomes")
 				.select("amount")
-				.eq("user_id", userState.id)
 				.order("created_at", { ascending: false }) // Fallback to created_at if dates are the same
 				.limit(1);
 			if (error) {
@@ -35,7 +34,6 @@ const Dashboard = () => {
 			const { data } = await supabase
 				.from("expenses")
 				.select("amount, tag, created_at")
-				.eq("user_id", userState.id)
 				.gte("created_at", new Date(new Date().setMonth(new Date().getMonth() - 1)).toISOString())
 				.order("created_at", { ascending: false }); // Fallback to created_at if dates are the same
 

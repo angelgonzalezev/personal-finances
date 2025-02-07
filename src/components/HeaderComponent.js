@@ -6,6 +6,7 @@ import supabase from "../supabase/supabaseClient";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUser } from "../redux/states/user";
+import { toaster } from "./ui/Toaster";
 
 const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 	const [error, setError] = useState(currentError);
@@ -47,8 +48,11 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 		}
 	};
 
-	const handleSignOut = () => {
-		dispatch(resetUser());
+	const handleSignOut = async () => {
+		const { error } = await supabase.auth.signOut();
+		if (!error) {
+			window.location.reload();
+		}
 	};
 
 	return (

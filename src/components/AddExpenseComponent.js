@@ -9,7 +9,6 @@ import SetExpenseComponent from "./SetExpenseComponent";
 const AddExpenseComponent = () => {
 	const userState = useSelector((store) => store.user);
 	const [open, setOpen] = useState(false);
-	console.log("🚀 ~ AddExpenseComponent ~ open:", open);
 	const [amount, setAmount] = useState();
 	const [error, setError] = useState("");
 	const [tag, setTag] = useState("");

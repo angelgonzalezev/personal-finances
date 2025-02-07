@@ -1,10 +1,10 @@
-import { Navigate, Outlet } from "react-router";
-import { PublicRoutes } from "./routes";
 import { useEffect, useState } from "react";
 import Loading from "../pages/Loading";
 import supabase from "../supabase/supabaseClient";
+import { Navigate, Outlet } from "react-router";
+import { PrivateRoutes } from "./routes";
 
-const AuthGuard = () => {
+const RedirectGuard = () => {
 	const [session, setSession] = useState(false);
 	const [loading, setLoading] = useState(true);
 
@@ -23,9 +23,9 @@ const AuthGuard = () => {
 		return <Loading />;
 	}
 	if (!session) {
-		return <Navigate replace to={PublicRoutes.Home} />;
-	} else {
 		return <Outlet />;
+	} else {
+		return <Navigate replace to={PrivateRoutes.Dashboard} />;
 	}
 };
-export default AuthGuard;
+export default RedirectGuard;

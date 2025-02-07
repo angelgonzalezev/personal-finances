@@ -3,36 +3,27 @@ import { Sparkles } from "lucide-react";
 import DialogComponent from "../../../components/DialogComponent";
 import RegistrationComponent from "../../../components/RegistrationComponent";
 import { useState } from "react";
-import { createUser } from "../../../redux/states/user";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
 import supabase from "../../../supabase/supabaseClient";
+import { useNavigate } from "react-router";
 import { PrivateRoutes } from "../../../routes/routes";
 
 const NavBarComponent = () => {
-	const dispatch = useDispatch();
-	const navigate = useNavigate();
 	const [open, setOpen] = useState(false);
 	const [form, setForm] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
+	const navigate = useNavigate();
 
 	const handleSignup = async () => {
-		const { data, error } = await supabase.auth.signUp(form);
+		const { error } = await supabase.auth.signUp(form);
 		if (error?.code === "user_already_exists") {
-			const { data, error } = await supabase.auth.signInWithPassword(form);
+			const { error } = await supabase.auth.signInWithPassword(form);
 			if (error) {
 				setError(error);
-			} else if (data.user && data.session) {
-				const { id } = data.user;
-				dispatch(createUser({ id }));
+			} else {
 				navigate(PrivateRoutes.Dashboard);
 			}
 		} else if (error) {
 			setError(error);
-		} else if (data.user && data.session) {
-			const { id } = data.user;
-			dispatch(createUser({ id }));
-			navigate(PrivateRoutes.Dashboard);
 		}
 	};
 
@@ -53,7 +44,7 @@ const NavBarComponent = () => {
 				</Text>
 			</Stack>
 			<DialogComponent
-				title={"Create an account"}
+				title={"Sign in"}
 				triggerElement={
 					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.600" color="white">
 						Sign In
@@ -62,7 +53,7 @@ const NavBarComponent = () => {
 				bodyElement={<RegistrationComponent setForm={setForm} form={form} error={error} />}
 				footerElement={
 					<Button px="16px" py="8px" borderRadius="full" bgColor="blue.600" color="white" onClick={handleSignup}>
-						Sign up
+						Sign in
 					</Button>
 				}
 				setOpen={setOpen}

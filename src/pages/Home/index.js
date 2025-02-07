@@ -7,7 +7,7 @@ import CTASection from "./sections/CTASection";
 
 const Home = () => {
 	return (
-		<Stack direction="column" bgColor={"white"} minH="100vh" w="100vw" alignItems={"center"}>
+		<Stack direction="column" bgColor={"hsl(222 85% 98.5% / 1)"} minH="100vh" w="100vw" alignItems={"center"}>
 			<NavbarSection />
 			<HeroSection />
 			<FeatureSection />
