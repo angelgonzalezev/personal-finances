@@ -24,6 +24,8 @@ const NavBarComponent = () => {
 			}
 		} else if (error) {
 			setError(error);
+		} else {
+			navigate(PrivateRoutes.Dashboard);
 		}
 	};
 
