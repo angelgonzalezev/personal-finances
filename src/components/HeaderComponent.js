@@ -6,11 +6,13 @@ import supabase from "../supabase/supabaseClient";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../redux/states/user";
+import FeedbackComponent from "./FeedbackComponent";
 
 const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 	const [error, setError] = useState(currentError);
 	const [monthlyIncome, setMonthlyIncome] = useState(currentMonthlyIncome);
 	const [open, setOpen] = useState(false);
+	const [openFeedback, setOpenFeedback] = useState(false);
 	const userState = useSelector((store) => store.user);
 	const dispatch = useDispatch();
 
@@ -108,6 +110,11 @@ const HeaderComponent = ({ currentError, currentMonthlyIncome }) => {
 							Sign out
 						</Text>
 					</Stack>
+					<FeedbackComponent
+						open={openFeedback}
+						setOpen={setOpenFeedback}
+						triggerElement={<Button onClick={() => setOpenFeedback(!openFeedback)}>Send Feedback!</Button>}
+					/>
 				</Stack>
 			</Stack>
 		</Stack>

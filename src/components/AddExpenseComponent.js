@@ -60,7 +60,7 @@ const AddExpenseComponent = () => {
 					rounded="full"
 					bottom={6}
 					right={6}
-					_hover={{ bgColor: "blue.600" }}
+					_hover={{ bgColor: "blue.500" }}
 				>
 					<Icon>
 						<Plus color="white" />
